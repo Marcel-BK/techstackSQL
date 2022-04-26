@@ -1,26 +1,23 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
 
 const App = () => {
     const contentful = require('contentful');
 
-    const client = contentful.createClient({
-        space: 'nar81f64yzsp',
-        environment: 'master', // defaults to 'master' if not set
-        accessToken: '5mqDvnN1n79lahTS_wM_QwQ2lxOg51XlM6L8JEpIbes'
-    })
-
     const [entries, setEntries] = useState();
 
     useEffect(() => {
+        const client = contentful.createClient({
+            space: process.env.REACT_APP_SPACE_ID,
+            environment: process.env.REACT_APP_ENVIONMENT, // defaults to 'master' if not set
+            accessToken: process.env.REACT_APP_ACCESS_TOKEN
+        });
+
         client.getEntries()
             .then((response) => {
-                console.log(response.items);
                 setEntries(response.items);
             })
             .catch(console.error);
-
 
     }, []);
 

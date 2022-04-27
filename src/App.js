@@ -26,17 +26,9 @@ const App = () => {
 
     }, []);
 
-    const test = () => {
-        console.log(entries);
-        entries.map((entry) => {
-            console.log(entry.fields);
-        });
-    }
-
     return (
         <div className="App">
             <header className="App-header">
-                {entries ? test() : 'Loading...'}
                 <NavBar />
                 <h1>Here comes the header</h1>
             </header>

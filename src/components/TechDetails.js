@@ -18,15 +18,10 @@ const TechDetails = (props) => {
             relatedTechs.push(techItem);
         }
     }) : relatedTechs = [];
-
-    let test;
-
-    techs ? console.log(tech.fields) : test = tech;
-
+    
     return (
         (tech) ? (
             <>
-                <hr></hr>
                 <Stack direction="horizontal">
                     <Link to={'/'} className='mx-2'><FontAwesomeIcon icon={faHome} /></Link>
                     <Link to={'/categories'}>{tech.fields.category}</Link>

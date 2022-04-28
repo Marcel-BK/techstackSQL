@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
-import './App.css';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import TechDetails from './components/TechDetails';
 import TechList from './components/TechList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './App.css';
 
 const App = () => {
     const contentful = require('contentful');
@@ -32,7 +31,6 @@ const App = () => {
         <div className="App">
             <header className="App-header">
                 <NavBar techs={entries} />
-                <h1>Here comes the header</h1>
             </header>
             <main>
                 <Routes>

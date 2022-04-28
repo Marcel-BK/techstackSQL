@@ -43,3 +43,20 @@ nav a {
 nav a.active {
     font-weight: bold;
 }
+
+#breadcrumbs {
+    display: flex;
+}
+
+#breadcrumbs ul{
+    display: flex;
+    list-style: none;
+}
+
+#breadcrumbs a {
+    color: var(--first-accent);
+}
+
+#techDetails {
+    text-align: justify;
+}

@@ -24,7 +24,6 @@ const App = () => {
                 setEntries(response.items);
             })
             .catch(console.error);
-
     }, []);
 
     return (
@@ -36,7 +35,6 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<TechList techs={entries} />} />
                     <Route path='/techs/:id' element={<TechDetails techs={entries} />} />
-                    {/* <Route path='/' element={<TechList />} /> */}
                 </Routes>
             </main>
             <footer>

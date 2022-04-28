@@ -31,7 +31,7 @@ const App = () => {
     return (
         <div className="App">
             <header className="App-header">
-                <NavBar />
+                <NavBar techs={entries} />
                 <h1>Here comes the header</h1>
             </header>
             <main>

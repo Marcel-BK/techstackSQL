@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import TechDetails from './components/TechDetails';
 import TechList from './components/TechList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
     const contentful = require('contentful');

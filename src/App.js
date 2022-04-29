@@ -1,4 +1,10 @@
 import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router';
+import Footer from './components/Footer';
+import NavBar from './components/NavBar';
+import TechDetails from './components/TechDetails';
+import TechList from './components/TechList';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const App = () => {
@@ -18,26 +24,21 @@ const App = () => {
                 setEntries(response.items);
             })
             .catch(console.error);
-
     }, []);
-
-    const test = () => {
-        console.log(entries);
-        entries.map((entry) => {
-            console.log(entry.fields);
-        });
-    }
 
     return (
         <div className="App">
             <header className="App-header">
-                {entries ? test() : 'Loading...'}
+                <NavBar techs={entries} />
             </header>
             <main>
-
+                <Routes>
+                    <Route path='/' element={<TechList techs={entries} />} />
+                    <Route path='/techs/:id' element={<TechDetails techs={entries} />} />
+                </Routes>
             </main>
             <footer>
-
+                <Footer />
             </footer>
         </div>
     );

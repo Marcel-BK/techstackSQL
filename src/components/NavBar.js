@@ -14,7 +14,7 @@ const NavBar = (props) => {
                     <NavLink to={`categories`}>Category-List</NavLink>
                 </li>
                 <li>
-                    <p>Category-Filter</p>
+                    <NavLink to={'.'}>Category-Filter</NavLink>
                 </li>
             </ul>
         </nav>

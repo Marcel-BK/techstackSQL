@@ -20,6 +20,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--secondary);
     color: var(--first-accent);
     padding: 1em;
@@ -29,10 +30,13 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
+    margin: 0;
+    align-items: center;
 }
 
 nav li {
     margin: 0 1em;
+    padding: 0;
 }
 
 nav a {
@@ -42,4 +46,21 @@ nav a {
 
 nav a.active {
     font-weight: bold;
+}
+
+#breadcrumbs {
+    display: flex;
+}
+
+#breadcrumbs ul{
+    display: flex;
+    list-style: none;
+}
+
+#breadcrumbs a {
+    color: var(--first-accent);
+}
+
+#techDetails {
+    text-align: justify;
 }

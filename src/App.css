@@ -64,3 +64,33 @@ nav a.active {
 #techDetails {
     text-align: justify;
 }
+
+ul {
+    list-style: none;
+}
+
+.tech-list-pic {
+    object-fit: cover;
+    width: 80%;
+    height: auto;
+    margin: -35% auto 0 auto;
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--first-accent);
+}
+
+.card-header, .card-body {
+    background-color: var(--first-accent);
+    border: none;
+}
+
+.card-footer {
+    background-color: var(--first-accent);
+}
+
+.card {
+    margin: 4.5em 2em;
+}
+

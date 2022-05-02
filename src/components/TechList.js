@@ -1,5 +1,5 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
+import { Spinner, Card, Row, Col, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
 const TechList = (props) => {
@@ -8,14 +8,31 @@ const TechList = (props) => {
 
   return (
     <>
-      <h1>TechList</h1>
+      <h1 className='text-center mt-3 mb-5'>TechList</h1>
       {techs ? (
-        <ul>
+        // <ul className='row'>
+
+          <div className='container'>
+          <Row className='justify-content-center'>
           {techs.map((tech) => {
-            console.log(tech);
-            return <li><Link to={`/techs/${tech.fields.id}`}>{tech.fields.title}</Link></li>;
+            return (
+              <Card key={tech.fields.id} className='p-0 text-center' style={{ width: '18rem' }}>
+                <Card.Header>
+                  <img className='tech-list-pic' src={tech.fields.logoLink} alt={`${tech.fields.title} Logo`} />
+                </Card.Header>
+                <Card.Body className='p-0 d-flex align-items-end justify-content-center'>
+                    <h3 className='my-2 text-dark'>{tech.fields.title}</h3>
+                </Card.Body>
+                <Card.Footer>
+                  <Button className='my-2'><Link to={`/techs/${tech.fields.id}`}>More about {tech.fields.title} &#10132;</Link></Button>
+                </Card.Footer>
+              </Card>
+            );
           })}
-        </ul>
+          </Row>
+          </div>
+
+        // </ul>
       ) : (
         <Spinner />
       )}

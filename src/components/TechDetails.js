@@ -7,18 +7,18 @@ import Breadcrumbs from './Breadcrumbs';
 const TechDetails = (props) => {
     const { techs } = props;
     const { id } = useParams();
-    let tech;
+    let tech = null;
     let relatedTechs = [];
 
     techs ? tech = techs.find(techItem => {
         return techItem.fields.id === parseInt(id);
     }) : tech = null;
 
-    tech ? techs.map((techItem) => {
+    tech && techs.map((techItem) => {
         if (tech.category === techItem.category) {
             relatedTechs.push(techItem);
         }
-    }) : relatedTechs = [];
+    });
 
     return (
         <>

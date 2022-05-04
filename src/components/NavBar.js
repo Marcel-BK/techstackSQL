@@ -1,24 +1,17 @@
 import { NavLink } from 'react-router-dom'
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 import { useState } from 'react';
+import { ChatRightText } from 'react-bootstrap-icons';
 
 const NavBar = ({ techs }) => {
-
-    // const [categories, setCategories] = useState([]);
     let categories = [];
-    console.log(techs);
-
-    let tempCategories = [];
 
     techs && techs.map(tech => {
-        console.log(tech.fields);
         categories.push(tech.fields.category);
     });
 
     categories = [...new Set(categories)];
 
-
-    console.log(categories);
     return (
         <nav>
             <NavLink to={`/`}>Our Logo</NavLink>
@@ -28,15 +21,15 @@ const NavBar = ({ techs }) => {
                 </li>
                 <li>
                     <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        <Dropdown.Toggle variant="" className='text-white' id="dropdown-basic">
                             Category Filter
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {
                                 categories && (
-                                    categories.map(category => {
+                                    categories.map((category, i) => {
                                         return (
-                                            <div className='px-3 my-2'>
+                                            <div key={`catItem_${i}`} className='px-3 my-2'>
                                                 <NavLink className={'text-dark'} to={`/categories/${category}`}>{category}</NavLink>
                                             </div>
                                         )

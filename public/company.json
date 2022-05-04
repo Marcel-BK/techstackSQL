@@ -1,0 +1,20 @@
+{
+    "Company": {
+        "Name": "Tech Info",
+        "Contacts": {
+            "Address": {
+                "Street": "Example Street",
+                "Number": "25c",
+                "ZIP": "56985",
+                "City": "AnyCity"
+            },
+            "Telephone": "+49 2692 3565452",
+            "EMail": "info@techinfo.com",
+            "Social": {
+                "Facebook": "facebook.com",
+                "LinkedIn": "linkend.in",
+                "Instagram": "instagram.com"
+            }
+        }
+    }
+}

@@ -14,7 +14,7 @@ const NavBar = ({ techs }) => {
 
     return (
         <nav>
-            <NavLink to={`/`}>Our Logo</NavLink>
+            <NavLink to={`/`}><img src='./TechStackLogo.svg' alt='Logo' style={{height: '2em', width: 'auto', color: 'white' }}/></NavLink>
             <ul>
                 <li>
                     <NavLink to={`categories`}>Category-List</NavLink>

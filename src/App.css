@@ -71,9 +71,17 @@ ul {
 
 .tech-list-pic {
     object-fit: cover;
-    width: 80%;
-    height: auto;
+    max-width: 14em;
+    max-height: 14em;
     margin: -35% auto 0 auto;
+    border: solid 1em var(--secondary);
+    background-color: var(--secondary);
+}
+
+.tech-list-pic-bg {
+    width: 14em;
+    height: 14em;
+    background-color: red;
 }
 
 .card a {
@@ -94,3 +102,6 @@ ul {
     margin: 4.5em 2em;
 }
 
+.shadow {
+    box-shadow: #233c64;
+}

@@ -17,14 +17,33 @@ body {
     color: var(--first-accent);
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 0 10px var(--primary);
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--secondary);
     color: var(--first-accent);
-    padding: 1em;
+    padding: 1rem 3rem;
     font-size: 1.5rem;
+}
+
+#logo-link {
+    mask-image: url(../public/TechStackLogo.svg);
+    background-color: var(--first-accent);
+    mask-size: cover;
+    height: 3em;
+    width: 3em;
+}
+
+#logo-link:hover {
+    background-color: var(--primary);
 }
 
 nav ul {
@@ -32,20 +51,62 @@ nav ul {
     display: flex;
     margin: 0;
     align-items: center;
+    justify-content: end;
+
 }
 
 nav li {
-    margin: 0 1em;
+    margin: 0;
+    margin-left: 1em;
     padding: 0;
+
 }
 
 nav a {
+    font-size: 1.5rem;
     text-decoration: none;
     color: var(--first-accent);
 }
 
 nav a.active {
     font-weight: bold;
+}
+
+.dropdown {
+    display: flex;
+}
+
+.dropdown button {
+    padding: 0;
+    color: var(--first-accent);
+    font-size: 1.5rem;
+}
+
+.dropdown button:hover, nav a:hover {
+    color: var(--primary);
+}
+
+.dropdown-menu {
+    background-color: var(--first-accent);
+    box-shadow: 0 0 5px var(--secondary);
+}
+
+.dd-item:hover {
+    color: var(--first-accent);
+    background-color: var(--secondary);
+}
+
+.dd-item a {
+    color: var(--primary);
+}
+
+.dd-item a:hover {
+    color: var(--first-accent);
+}
+
+.dropdown button:focus {
+    border: none;
+    box-shadow: none;
 }
 
 #breadcrumbs {
@@ -105,6 +166,41 @@ ul {
     margin: 4.5em 2em;
 }
 
+.card button {
+    background-color: var(--primary);
+    border: none;
+}
+
+.card button:hover {
+    background-color: var(--secondary);
+}
+
 .shadow {
     box-shadow: #233c64;
+}
+
+.footer-container {
+    color: var(--first-accent);
+    background-color: var(--secondary);
+    padding: 1rem 3rem;
+    margin: 0;
+}
+
+footer a {
+    color: var(--first-accent);
+}
+
+footer a:hover {
+    color: var(--primary);
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    color: var(--first-accent);
+    font-size: 2rem;
+}
+
+.social-icon:hover {
+    color: var(--primary);
 }

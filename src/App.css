@@ -69,19 +69,22 @@ ul {
     list-style: none;
 }
 
+.tech-list-header {
+    color: var(--primary);
+}
+
 .tech-list-pic {
     object-fit: cover;
     max-width: 14em;
     max-height: 14em;
-    margin: -35% auto 0 auto;
-    border: solid 1em var(--secondary);
-    background-color: var(--secondary);
+    margin: auto;
 }
 
 .tech-list-pic-bg {
-    width: 14em;
-    height: 14em;
-    background-color: red;
+    width: 15.5em;
+    height: 15.5em;
+    margin: -35% auto 0 auto;
+    background-color: var(--secondary);
 }
 
 .card a {

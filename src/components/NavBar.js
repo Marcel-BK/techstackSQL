@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import { Dropdown, DropdownButton } from 'react-bootstrap'
-import { useState } from 'react';
-import { ChatRightText } from 'react-bootstrap-icons';
+import { Dropdown, DropdownButton, Navbar } from 'react-bootstrap'
+import '../HeaderFooter.css'
 
 const NavBar = ({ techs }) => {
     let categories = [];
@@ -13,24 +12,25 @@ const NavBar = ({ techs }) => {
     categories = [...new Set(categories)];
 
     return (
-        <nav>
-            <NavLink to={`/`}><img src='./TechStackLogo.svg' alt='Logo' style={{height: '2em', width: 'auto', color: 'white' }}/></NavLink>
+        <nav >
+            {/* <NavLink id='logo-link' to={`/`}><img id='logo' src='./TechStackLogo.svg' alt='Tech Stack Logo' /></NavLink> */}
+            <NavLink id='logo-link' to={`/`} />
             <ul>
                 <li>
                     <NavLink to={`categories`}>Category-List</NavLink>
                 </li>
                 <li>
                     <Dropdown>
-                        <Dropdown.Toggle variant="" className='text-white' id="dropdown-basic">
-                            Category Filter
+                        <Dropdown.Toggle variant=""  id="dropdown-basic">
+                            Category-Filter
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {
                                 categories && (
                                     categories.map((category, i) => {
                                         return (
-                                            <div key={`catItem_${i}`} className='px-3 my-2'>
-                                                <NavLink className={'text-dark'} to={`/categories/${category}`}>{category}</NavLink>
+                                            <div key={`catItem_${i}`} className='px-3 my-2 dd-item'>
+                                                <NavLink to={`/categories/${category}`}>{category}</NavLink>
                                             </div>
                                         )
                                     })

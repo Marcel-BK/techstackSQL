@@ -176,7 +176,15 @@ ul {
 }
 
 .shadow {
-    box-shadow: #233c64;
+    box-shadow: var(--secondary);
+}
+
+.wiki_link a {
+    color: var(--first-accent);
+}
+
+.wiki_link a:hover {
+    color: var(--secondary);
 }
 
 .footer-container {

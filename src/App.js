@@ -22,6 +22,7 @@ const App = () => {
         client.getEntries()
             .then((response) => {
                 setEntries(response.items);
+                console.log(response.items);
             })
             .catch(console.error);
     }, []);

@@ -28,24 +28,29 @@ const TechDetails = (props) => {
                     path={[tech.fields.category, id]}
                     name={tech.fields.title}
                 /> */}
-
                     <div className='bg-light'>
-                        <figure className='w-25 mx-auto py-3'>
+                        <figure className='w-25 mx-auto py-4'>
                             <img className='w-100' src={tech.fields.logoLink} />
                         </figure>
                     </div>
                     <div>
+                        <div className='w-75 mx-auto'>
+                            <h2>{tech.fields.title}</h2>
+                        </div>
                         <div
                             id='techDescription'
                             className='w-75 mx-auto'
                             dangerouslySetInnerHTML={{ __html: tech.fields.description }}
                         >
                         </div>
+                        <div className='w-75 mx-auto wiki_link py-4'>
+                            <a href={tech.fields.wikiLink} target='_blank'>Go to wiki page</a>
+                        </div>
                     </div>
                     <div id='relatedTechs'>
                         {
-                            relatedTechs.map(techItem => {
-                                return <p>{techItem.fields.name}</p>
+                            relatedTechs.map((techItem, index) => {
+                                return <p key={index}>{techItem.fields.name}</p>
                             })
                         }
                     </div>

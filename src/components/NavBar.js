@@ -13,7 +13,6 @@ const NavBar = ({ techs }) => {
 
     return (
         <nav >
-            {/* <NavLink id='logo-link' to={`/`}><img id='logo' src='./TechStackLogo.svg' alt='Tech Stack Logo' /></NavLink> */}
             <NavLink id='logo-link' to={`/`} />
             <ul>
                 <li>

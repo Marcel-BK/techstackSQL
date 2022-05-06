@@ -10,7 +10,7 @@ const Footer = () => {
     const [company, setCompany] = useState();
 
     useEffect(() => {
-        axios.get('company.json')
+        axios.get('/company.json')
             .then(res => setCompany(res.data.Company))
             .catch(err => console.log(err))
     }, []);

@@ -1,15 +1,19 @@
 import { NavLink } from 'react-router-dom'
-import { Dropdown, DropdownButton, Navbar } from 'react-bootstrap'
+import { Dropdown } from 'react-bootstrap'
 import '../HeaderFooter.css'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const NavBar = ({ techs }) => {
-    let categories = [];
+    const [categories, setCategories] = useState();
 
-    techs && techs.map(tech => {
-        categories.push(tech.fields.category);
-    });
-
-    categories = [...new Set(categories)];
+    useEffect(() => {
+        axios
+        .get(`${process.env.REACT_APP_TECHSTACK_API}/api/categories`)
+        .then(res => {
+            setCategories(res.data.categories);
+        })
+    }, [])
 
     return (
         <nav >
@@ -29,7 +33,7 @@ const NavBar = ({ techs }) => {
                                     categories.map((category, i) => {
                                         return (
                                             <div key={`catItem_${i}`} className='px-3 my-2 dd-item'>
-                                                <NavLink to={`/categories/${category}`}>{category}</NavLink>
+                                                <NavLink to={`/categories/${category.id}`}>{category.title}</NavLink>
                                             </div>
                                         )
                                     })

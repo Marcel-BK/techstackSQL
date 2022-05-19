@@ -6,26 +6,26 @@ import axios from 'axios';
 const TechDetails = (props) => {
     const { id } = useParams();
     const [tech, setTech] = useState(null);
-    const [relatedTechs, setRelatedTechs] = useState(null);
+    // const [relatedTechs, setRelatedTechs] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios
             .get(`${process.env.REACT_APP_TECHSTACK_API}/api/techs/${id}`)
             .then(response => {
-                const catId = response.data.tech.cat_id;
+                // const catId = response.data.tech.cat_id;
                 console.log(response.data.tech);
                 setTech(response.data.tech);
-                axios
-                    .get(`${process.env.REACT_APP_TECHSTACK_API}/api/techs/category/${catId}`)
-                    .then(res2 => {
-                        setRelatedTechs(res2.techs);
-                        console.log(res2.techs);
-                        setLoading(false);
-                    })
-                    .catch(err => console.log(err));
-            })
-            .catch(err => console.log(err));
+                // axios
+                //     .get(`${process.env.REACT_APP_TECHSTACK_API}/api/techs/category/${catId}`)
+                //     .then(res2 => {
+                //         setRelatedTechs(res2.techs);
+                //         console.log(res2.techs);
+                //     })
+                //     .catch(err => console.log(err));
+                    setLoading(false);
+                })
+                .catch(err => console.log(err));
 
     }, []);
 
@@ -56,7 +56,7 @@ const TechDetails = (props) => {
                             <div className='w-75 mx-auto wiki_link py-4'>
                                 <a href={tech.wiki_link} target='_blank' rel="noreferrer">Go to wiki page</a>
                             </div>
-                        </div>
+                        </div>q
                     </div>
                 )
             }

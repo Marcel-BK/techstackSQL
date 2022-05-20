@@ -16,6 +16,7 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<TechList />} />
                     <Route path='/techs/:id' element={<TechDetails />} />
+                    <Route path='/techs/category/:catid' element={<TechList filter={true}/>} />
                 </Routes>
             </main>
             <footer>

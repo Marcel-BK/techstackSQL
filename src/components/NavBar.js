@@ -9,10 +9,10 @@ const NavBar = ({ techs }) => {
 
     useEffect(() => {
         axios
-        .get(`${process.env.REACT_APP_TECHSTACK_API}/api/categories`)
-        .then(res => {
-            setCategories(res.data.categories);
-        })
+            .get(`${process.env.REACT_APP_TECHSTACK_API}/api/categories`)
+            .then(res => {
+                setCategories(res.data.categories);
+            })
     }, [])
 
     return (
@@ -20,11 +20,11 @@ const NavBar = ({ techs }) => {
             <NavLink id='logo-link' to={`/`} />
             <ul>
                 <li>
-                    <NavLink to={`categories`}>Category-List</NavLink>
+                    <NavLink to={`/`}>Home</NavLink>
                 </li>
                 <li>
                     <Dropdown>
-                        <Dropdown.Toggle variant=""  id="dropdown-basic">
+                        <Dropdown.Toggle variant="" id="dropdown-basic">
                             Category-Filter
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
@@ -33,7 +33,7 @@ const NavBar = ({ techs }) => {
                                     categories.map((category, i) => {
                                         return (
                                             <div key={`catItem_${i}`} className='px-3 my-2 dd-item'>
-                                                <NavLink to={`/categories/${category.id}`}>{category.title}</NavLink>
+                                                <NavLink to={`/techs/category/${category.id}`}>{category.title}</NavLink>
                                             </div>
                                         )
                                     })

@@ -31,7 +31,7 @@ const TechList = ({ filter }) => {
     return (
         <>
             {error && <h1>{error}</h1>}
-            {!filter ? <h1 className='text-center mt-3 mb-5'>TechList</h1> : <h1 className='text-center mt-3 mb-5'>TechList: {catName}</h1>}
+            {!filter ? <h1 className='text-center mt-3 mb-5'>TechList</h1> : <h1 className='text-center mt-3 mb-5'>TechList: {techs[0].cat_title}</h1>}
             {
                 loading ? <Spinner /> : (
                     <div className='container'>
